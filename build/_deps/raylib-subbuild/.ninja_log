@@ -1,0 +1,21 @@
+# ninja log v6
+3	104	7963480764145299	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	126ed200f442769f
+3	104	7963480764145299	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir	126ed200f442769f
+104	518096	7963485944046680	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	6b5884195427ebb5
+104	518096	7963485944046680	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download	6b5884195427ebb5
+518099	521417	7963485944187139	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	7b818e70d6c081cf
+518099	521417	7963485944187139	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update	7b818e70d6c081cf
+521417	521566	7963485978765107	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	e74eee34f06664ea
+521417	521566	7963485978765107	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch	e74eee34f06664ea
+521567	521678	7963485979889547	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	321df88a00b45032
+521567	521678	7963485979889547	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure	321df88a00b45032
+521679	521791	7963485980995508	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	809f6dcc102a2d34
+521679	521791	7963485980995508	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build	809f6dcc102a2d34
+521791	521903	7963485982127365	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	ccab6d9a1cca034d
+521791	521903	7963485982127365	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install	ccab6d9a1cca034d
+521903	522018	7963485983267954	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	fbcdd7d1431a9b28
+521903	522018	7963485983267954	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test	fbcdd7d1431a9b28
+522018	522171	7963485984804183	CMakeFiles/raylib-populate-complete	b52e20f2c94d6a13
+522018	522171	7963485984804183	raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	b52e20f2c94d6a13
+522018	522171	7963485984804183	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete	b52e20f2c94d6a13
+522018	522171	7963485984804183	C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-done	b52e20f2c94d6a13
