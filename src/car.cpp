@@ -1,6 +1,7 @@
 #include "Car.h"
 
 #include <cmath>
+#include <iostream>
 
 static constexpr float PI_VALUE = 3.14159265358979323846f;
 
@@ -61,25 +62,27 @@ static Vector2 angleToDirection(float angleDegrees) {
 }
 
 Car::Car(Vector2 startPosition, float startHeadingDegrees)
-    : position(startPosition),
-      velocity{0.0f, 0.0f},
-      headingDegrees(startHeadingDegrees),
-      driftOffsetDegrees(0.0f),
-      throttleInput(0.0f),
-      steeringInput(0.0f),
-      isDead(false),
-      width(40.0f),
-      height(20.0f),
-      engineForce(450.0f),
-      turnRate(150.0f),
-      lateralGrip(3.0f),
-      drag(0.80f),
-      sensorDegreeValues{
+  : position(startPosition),
+    velocity{0.0f, 0.0f},
+    headingDegrees(startHeadingDegrees),
+    driftOffsetDegrees(0.0f),
+    throttleInput(0.0f),
+    steeringInput(0.0f),
+    isDead(false),
+    width(40.0f),
+    height(20.0f),
+    engineForce(450.0f),
+    turnRate(150.0f),
+    lateralGrip(3.0f),
+    drag(0.80f),
+    sensorDegreeValues{
         -90.0f, -45.0f, -20.0f, -8.0f, 0.0f, 8.0f, 20.0f, 45.0f, 90.0f
-      },
-      sensorMaxDistance(300.0f)
-      
-      {}
+    },
+    sensorMaxDistance(300.0f),
+    sensorAmount(sensorDegreeValues.size()),
+    sensorDistances(sensorAmount, 0.0f)
+    
+    {}
 
 void Car::update(float dt, const std::vector<Rectangle>& walls) {
     if (isDead) {
@@ -123,14 +126,19 @@ void Car::update(float dt, const std::vector<Rectangle>& walls) {
     }
 
     float newSpeed = length(velocity);
-    if (newSpeed > 0.01f) {
+    // if (newSpeed > 0.01f) {
         float velocityAngleRadians = std::atan2(velocity.y, velocity.x);
         float velocityAngleDegrees = velocityAngleRadians * 180.0f / PI_VALUE;
         driftOffsetDegrees =
             normalizeAngleDegrees(velocityAngleDegrees - headingDegrees);
-    } else {
-        driftOffsetDegrees = 0.0f;
-    }
+    // } else {
+    //     driftOffsetDegrees = 0.0f;
+    // }
+
+    for (int i = 0; i<sensorAmount; i++) {
+        sensorDistances[i] = castRayToWalls(sensorDegreeValues[i], walls, 500.0f);
+    };
+    // std::cout << sensorDistances[8]<<std::endl; 90 grader til høyre
 }
 
 void Car::draw() const {

@@ -39,6 +39,7 @@ private:
     std::vector<float> sensorDegreeValues;
     std::vector<float> sensorDistances;
     float sensorMaxDistance;
+    int sensorAmount;
 
     Vector2 getForwardVector() const;
     Vector2 getRightVector() const;

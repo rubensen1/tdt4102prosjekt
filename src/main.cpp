@@ -55,9 +55,6 @@ int main() {
         car.draw();
 
         EndDrawing();
-
-        float frontDistance = car.castRayToWalls(0.0f, walls, 500.0f);
-        std::cout << frontDistance<<std::endl;
     }
 
     CloseWindow();
