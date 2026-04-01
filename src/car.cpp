@@ -4,6 +4,62 @@
 
 static constexpr float PI_VALUE = 3.14159265358979323846f;
 
+static bool rayIntersectsRectangle(Vector2 origin,
+                                   Vector2 direction,
+                                   Rectangle rect,
+                                   float& outDistance) {
+    const float epsilon = 0.00001f;
+
+    float tMin = -INFINITY;
+    float tMax = INFINITY;
+
+    if (std::fabs(direction.x) < epsilon) {
+        if (origin.x < rect.x || origin.x > rect.x + rect.width) {
+            return false;
+        }
+    } else {
+        float tx1 = (rect.x - origin.x) / direction.x;
+        float tx2 = ((rect.x + rect.width) - origin.x) / direction.x;
+
+        float txMin = std::fmin(tx1, tx2);
+        float txMax = std::fmax(tx1, tx2);
+
+        tMin = std::fmax(tMin, txMin);
+        tMax = std::fmin(tMax, txMax);
+    }
+
+    if (std::fabs(direction.y) < epsilon) {
+        if (origin.y < rect.y || origin.y > rect.y + rect.height) {
+            return false;
+        }
+    } else {
+        float ty1 = (rect.y - origin.y) / direction.y;
+        float ty2 = ((rect.y + rect.height) - origin.y) / direction.y;
+
+        float tyMin = std::fmin(ty1, ty2);
+        float tyMax = std::fmax(ty1, ty2);
+
+        tMin = std::fmax(tMin, tyMin);
+        tMax = std::fmin(tMax, tyMax);
+    }
+
+    if (tMax < 0.0f) {
+        return false;
+    }
+
+    if (tMin > tMax) {
+        return false;
+    }
+
+    outDistance = (tMin >= 0.0f) ? tMin : tMax;
+    return true;
+}
+
+static Vector2 angleToDirection(float angleDegrees) {
+    float angleRadians = angleDegrees * PI_VALUE / 180.0f;
+    return {std::cos(angleRadians), std::sin(angleRadians)};
+}
+
 Car::Car(Vector2 startPosition, float startHeadingDegrees)
     : position(startPosition),
       velocity{0.0f, 0.0f},
@@ -17,7 +73,13 @@ Car::Car(Vector2 startPosition, float startHeadingDegrees)
       engineForce(450.0f),
       turnRate(150.0f),
       lateralGrip(3.0f),
-      drag(0.80f) {}
+      drag(0.80f),
+      sensorDegreeValues{
+        -90.0f, -45.0f, -20.0f, -8.0f, 0.0f, 8.0f, 20.0f, 45.0f, 90.0f
+      },
+      sensorMaxDistance(300.0f)
+      
+      {}
 
 void Car::update(float dt, const std::vector<Rectangle>& walls) {
     if (isDead) {
@@ -131,15 +193,15 @@ void Car::setInputs(float throttleAmount, float steeringAmount) {
     steeringInput = steeringAmount;
 }
 
-void Car::reset(Vector2 startPosition, float startHeadingDegrees) {
-    position = startPosition;
-    velocity = {0.0f, 0.0f};
-    headingDegrees = startHeadingDegrees;
-    driftOffsetDegrees = 0.0f;
-    throttleInput = 0.0f;
-    steeringInput = 0.0f;
-    isDead = false;
-}
+// void Car::reset(Vector2 startPosition, float startHeadingDegrees) {
+//     position = startPosition;
+//     velocity = {0.0f, 0.0f};
+//     headingDegrees = startHeadingDegrees;
+//     driftOffsetDegrees = 0.0f;
+//     throttleInput = 0.0f;
+//     steeringInput = 0.0f;
+//     isDead = false;
+// }
 
 Vector2 Car::getPosition() const {
     return position;
@@ -239,4 +301,30 @@ bool Car::isCollidingWithWalls(const std::vector<Rectangle>& walls) const {
     }
 
     return false;
+}
+
+float Car::castRayToWalls(float angleOffsetDegrees,
+                          const std::vector<Rectangle>& walls,
+                          float maxDistance) const {
+    Vector2 origin = position;
+    Vector2 direction = angleToDirection(headingDegrees + angleOffsetDegrees);
+
+    float closestDistance = maxDistance;
+    bool hitAnything = false;
+
+    for (const Rectangle& wall : walls) {
+        float hitDistance = 0.0f;
+        if (rayIntersectsRectangle(origin, direction, wall, hitDistance)) {
+            if (hitDistance >= 0.0f && hitDistance < closestDistance) {
+                closestDistance = hitDistance;
+                hitAnything = true;
+            }
+        }
+    }
+
+    if (!hitAnything) {
+        return maxDistance;
+    }
+
+    return closestDistance;
 }

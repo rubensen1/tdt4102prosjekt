@@ -1,5 +1,6 @@
 #include "Car.h"
 #include "raylib.h"
+#include <iostream>
 
 int main() {
     InitWindow(1600, 1000, "Car");
@@ -54,6 +55,9 @@ int main() {
         car.draw();
 
         EndDrawing();
+
+        float frontDistance = car.castRayToWalls(0.0f, walls, 500.0f);
+        std::cout << frontDistance<<std::endl;
     }
 
     CloseWindow();

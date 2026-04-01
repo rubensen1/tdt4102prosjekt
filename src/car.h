@@ -11,13 +11,14 @@ public:
     void draw() const;
 
     void setInputs(float throttleAmount, float steeringAmount);
-    void reset(Vector2 startPosition, float startHeadingDegrees);
+    // void reset(Vector2 startPosition, float startHeadingDegrees);
 
     Vector2 getPosition() const;
     Vector2 getVelocity() const;
     float getHeadingDegrees() const;
     float getDriftOffsetDegrees() const;
     bool getIsDead() const;
+    float castRayToWalls(float angleOffsetDegrees, const std::vector<Rectangle>& walls, float maxDistance) const;
 
 private:
     Vector2 position;
@@ -34,6 +35,10 @@ private:
     float turnRate;
     float lateralGrip;
     float drag;
+
+    std::vector<float> sensorDegreeValues;
+    std::vector<float> sensorDistances;
+    float sensorMaxDistance;
 
     Vector2 getForwardVector() const;
     Vector2 getRightVector() const;
