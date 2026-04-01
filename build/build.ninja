@@ -36,43 +36,49 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/
 # =============================================================================
-# Object build statements for EXECUTABLE target CarAI
+# Object build statements for EXECUTABLE target yuh
 
 
 #############################################
-# Order-only phony target for CarAI
+# Order-only phony target for yuh
 
-build cmake_object_order_depends_target_CarAI: phony || cmake_object_order_depends_target_glfw cmake_object_order_depends_target_raylib
+build cmake_object_order_depends_target_yuh: phony || cmake_object_order_depends_target_glfw cmake_object_order_depends_target_raylib
 
-build CMakeFiles/CarAI.dir/src/main.cpp.obj: CXX_COMPILER__CarAI_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/src/main.cpp || cmake_object_order_depends_target_CarAI
+build CMakeFiles/yuh.dir/src/main.cpp.obj: CXX_COMPILER__yuh_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/src/main.cpp || cmake_object_order_depends_target_yuh
   DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
-  DEP_FILE = CMakeFiles\CarAI.dir\src\main.cpp.obj.d
+  DEP_FILE = CMakeFiles\yuh.dir\src\main.cpp.obj.d
   FLAGS = -std=gnu++20
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src"
-  OBJECT_DIR = CMakeFiles\CarAI.dir
-  OBJECT_FILE_DIR = CMakeFiles\CarAI.dir\src
-  TARGET_COMPILE_PDB = CMakeFiles\CarAI.dir\
-  TARGET_PDB = CarAI.pdb
-  TARGET_SUPPORT_DIR = CMakeFiles\CarAI.dir
+  OBJECT_DIR = CMakeFiles\yuh.dir
+  OBJECT_FILE_DIR = CMakeFiles\yuh.dir\src
+  TARGET_SUPPORT_DIR = CMakeFiles\yuh.dir
+
+build CMakeFiles/yuh.dir/src/Car.cpp.obj: CXX_COMPILER__yuh_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/src/Car.cpp || cmake_object_order_depends_target_yuh
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles\yuh.dir\src\Car.cpp.obj.d
+  FLAGS = -std=gnu++20
+  INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src"
+  OBJECT_DIR = CMakeFiles\yuh.dir
+  OBJECT_FILE_DIR = CMakeFiles\yuh.dir\src
+  TARGET_SUPPORT_DIR = CMakeFiles\yuh.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target CarAI
+# Link build statements for EXECUTABLE target yuh
 
 
 #############################################
-# Link the executable CarAI.exe
+# Link the executable yuh.exe
 
-build CarAI.exe: CXX_EXECUTABLE_LINKER__CarAI_ CMakeFiles/CarAI.dir/src/main.cpp.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
+build yuh.exe: CXX_EXECUTABLE_LINKER__yuh_ CMakeFiles/yuh.dir/src/main.cpp.obj CMakeFiles/yuh.dir/src/Car.cpp.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
   LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -lopengl32  -lglu32  -lwinmm  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\CarAI.dir
+  OBJECT_DIR = CMakeFiles\yuh.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\CarAI.dir\
-  TARGET_FILE = CarAI.exe
-  TARGET_IMPLIB = libCarAI.dll.a
-  TARGET_PDB = CarAI.pdb
-  TARGET_SUPPORT_DIR = CMakeFiles\CarAI.dir
+  TARGET_FILE = yuh.exe
+  TARGET_IMPLIB = libyuh.dll.a
+  TARGET_PDB = yuh.exe.dbg
+  TARGET_SUPPORT_DIR = CMakeFiles\yuh.dir
 
 
 #############################################
@@ -278,8 +284,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.obj: C_COMPILER__
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src" -isystem "C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include"
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.obj: C_COMPILER__raylib_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/rcore.c || cmake_object_order_depends_target_raylib
@@ -289,8 +293,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.obj: C_COMPILER__r
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src" -isystem "C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include"
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj: C_COMPILER__raylib_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/rmodels.c || cmake_object_order_depends_target_raylib
@@ -300,8 +302,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.obj: C_COMPILER_
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src" -isystem "C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include"
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.obj: C_COMPILER__raylib_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/rshapes.c || cmake_object_order_depends_target_raylib
@@ -311,8 +311,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.obj: C_COMPILER_
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src" -isystem "C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include"
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj: C_COMPILER__raylib_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/rtext.c || cmake_object_order_depends_target_raylib
@@ -322,8 +320,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.obj: C_COMPILER__r
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src" -isystem "C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include"
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.obj: C_COMPILER__raylib_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/rtextures.c || cmake_object_order_depends_target_raylib
@@ -333,8 +329,6 @@ build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.obj: C_COMPILE
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src" -isystem "C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include"
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 
@@ -350,9 +344,8 @@ build _deps/raylib-build/raylib/libraylib.a: C_STATIC_LIBRARY_LINKER__raylib_ _d
   OBJECT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\CMakeFiles\raylib.dir\raylib.pdb
   TARGET_FILE = _deps\raylib-build\raylib\libraylib.a
-  TARGET_PDB = _deps\raylib-build\raylib\libraylib.pdb
+  TARGET_PDB = raylib.a.dbg
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\CMakeFiles\raylib.dir
 
 
@@ -559,8 +552,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/init.c || cmake_object_order_depends_target_glfw
@@ -570,8 +561,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.obj
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/input.c || cmake_object_order_depends_target_glfw
@@ -581,8 +570,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.ob
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
@@ -592,8 +579,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/platform.c || cmake_object_order_depends_target_glfw
@@ -603,8 +588,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/platform.c
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
@@ -614,8 +597,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/window.c || cmake_object_order_depends_target_glfw
@@ -625,8 +606,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
@@ -636,8 +615,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_contex
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
@@ -647,8 +624,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_con
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/null_init.c || cmake_object_order_depends_target_glfw
@@ -658,8 +633,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_init.
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/null_monitor.c || cmake_object_order_depends_target_glfw
@@ -669,8 +642,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_monit
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/null_window.c || cmake_object_order_depends_target_glfw
@@ -680,8 +651,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_windo
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/null_joystick.c || cmake_object_order_depends_target_glfw
@@ -691,8 +660,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/null_joyst
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_module.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/win32_module.c || cmake_object_order_depends_target_glfw
@@ -702,8 +669,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_modu
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/win32_time.c || cmake_object_order_depends_target_glfw
@@ -713,8 +678,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_time
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/win32_thread.c || cmake_object_order_depends_target_glfw
@@ -724,8 +687,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_thre
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/win32_init.c || cmake_object_order_depends_target_glfw
@@ -735,8 +696,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_init
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/win32_joystick.c || cmake_object_order_depends_target_glfw
@@ -746,8 +705,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_joys
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/win32_monitor.c || cmake_object_order_depends_target_glfw
@@ -757,8 +714,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_moni
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/win32_window.c || cmake_object_order_depends_target_glfw
@@ -768,8 +723,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/win32_wind
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj: C_COMPILER__glfw_unscanned_ C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src/wgl_context.c || cmake_object_order_depends_target_glfw
@@ -779,8 +732,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/wgl_contex
   INCLUDES = -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/include" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-src/src/external/glfw/src" -I"C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src"
   OBJECT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
-  TARGET_COMPILE_PDB = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\
-  TARGET_PDB = ""
   TARGET_SUPPORT_DIR = _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir
 
 
@@ -896,8 +847,6 @@ build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings | $
 # =============================================================================
 # Target aliases.
 
-build CarAI: phony CarAI.exe
-
 build glfw: phony _deps/raylib-build/raylib/external/glfw/src/glfw
 
 build libraylib.a: phony _deps/raylib-build/raylib/libraylib.a
@@ -905,6 +854,8 @@ build libraylib.a: phony _deps/raylib-build/raylib/libraylib.a
 build raylib: phony _deps/raylib-build/raylib/libraylib.a
 
 build update_mappings: phony _deps/raylib-build/raylib/external/glfw/src/update_mappings
+
+build yuh: phony yuh.exe
 
 # =============================================================================
 # Folder targets.
@@ -914,7 +865,7 @@ build update_mappings: phony _deps/raylib-build/raylib/external/glfw/src/update_
 #############################################
 # Folder: C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build
 
-build all: phony CarAI.exe _deps/raylib-build/all
+build all: phony yuh.exe _deps/raylib-build/all
 
 # =============================================================================
 
@@ -951,14 +902,14 @@ build _deps/raylib-build/raylib/external/glfw/src/all: phony _deps/raylib-build/
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/CTestTestfile.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/CTestTestfile.cmake: RERUN_CMAKE | C$:/TDT4102-mingw64/share/cmake-4.2/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCCompiler.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCCompilerABI.c C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCXXCompiler.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCompilerIdDetection.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCompilerSupport.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineRCCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeNinjaFindMake.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeParseImplicitLinkInfo.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeParseLibraryArchitecture.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeRCCompiler.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystem.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeTestCompilerCommon.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeTestRCCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CPack.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CPackComponent.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckCCompilerFlag.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckIncludeFile.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckLibraryExists.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Diab-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-CXX-CXXImportStd.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Renesas-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/TI-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/TIClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/ExternalProject/shared_internal_commands.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FetchContent.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FetchContent/CMakeLists.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindGit.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindOpenGL.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindPackageMessage.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindThreads.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/GNUInstallDirs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeInspectCLinker.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeInspectCXXLinker.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckCompilerFlag.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckFlagCommonConfig.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/FeatureTesting.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-Determine-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-windres.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Templates/CPackConfig.cmake.in C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/CMakeLists.txt CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/cmake/raylib-config.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/src/CMakeLists.txt
+build build.ninja C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/external/glfw/src/cmake_install.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/CTestTestfile.cmake C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/build/_deps/raylib-build/raylib/CTestTestfile.cmake: RERUN_CMAKE | C$:/TDT4102-mingw64/share/cmake-4.2/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CPack.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CPackComponent.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckCCompilerFlag.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckIncludeFile.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckLibraryExists.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/ExternalProject/shared_internal_commands.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FetchContent.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FetchContent/CMakeLists.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindGit.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindOpenGL.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindPackageMessage.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindThreads.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/GNUInstallDirs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckCompilerFlag.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckFlagCommonConfig.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-windres.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Templates/CPackConfig.cmake.in C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/CMakeLists.txt CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/cmake/raylib-config.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/src/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/TDT4102-mingw64/share/cmake-4.2/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCCompiler.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCCompilerABI.c C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCXXCompiler.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCompilerIdDetection.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineCompilerSupport.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineRCCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeNinjaFindMake.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeParseImplicitLinkInfo.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeParseLibraryArchitecture.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeRCCompiler.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystem.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeTestCompilerCommon.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeTestRCCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CPack.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CPackComponent.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckCCompilerFlag.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckIncludeFile.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckLibraryExists.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Diab-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-CXX-CXXImportStd.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Renesas-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/TI-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/TIClang-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/ExternalProject/shared_internal_commands.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FetchContent.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FetchContent/CMakeLists.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindGit.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindOpenGL.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindPackageMessage.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindThreads.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/GNUInstallDirs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeInspectCLinker.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeInspectCXXLinker.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckCompilerFlag.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckFlagCommonConfig.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/FeatureTesting.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-Determine-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-windres.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Templates/CPackConfig.cmake.in C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/CMakeLists.txt CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/cmake/raylib-config.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/src/CMakeLists.txt: phony
+build C$:/TDT4102-mingw64/share/cmake-4.2/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCXXInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeDependentOption.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeGenericSystem.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeRCInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CPack.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CPackComponent.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckCCompilerFlag.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckIncludeFile.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/CheckLibraryExists.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Compiler/GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/ExternalProject/shared_internal_commands.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FetchContent.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FetchContent/CMakeLists.cmake.in C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindGit.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindOpenGL.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindPackageMessage.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/FindThreads.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/GNUInstallDirs.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckCompilerFlag.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckFlagCommonConfig.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Linker/Windows-GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-C.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU-CXX.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-GNU.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-Initialize.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows-windres.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/Windows.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake C$:/TDT4102-mingw64/share/cmake-4.2/Templates/CPackConfig.cmake.in C$:/Users/ruben/Desktop/cplus$ prosjekt/tdt4102prosjekt/CMakeLists.txt CMakeCache.txt CMakeFiles/4.2.1/CMakeCCompiler.cmake CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeRCCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/ParseConfigHeader.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/cmake/raylib-config.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/src/CMakeLists.txt: phony
 
 
 #############################################

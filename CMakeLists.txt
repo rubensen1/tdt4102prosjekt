@@ -15,6 +15,9 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(raylib)
 
-add_executable(CarAI src/main.cpp)
+add_executable(yuh
+    src/main.cpp
+    src/Car.cpp
+)
 
-target_link_libraries(CarAI PRIVATE raylib)
+target_link_libraries(yuh PRIVATE raylib)

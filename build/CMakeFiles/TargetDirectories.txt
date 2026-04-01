@@ -1,4 +1,4 @@
-C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/CMakeFiles/CarAI.dir
+C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/CMakeFiles/yuh.dir
 C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/CMakeFiles/package.dir
 C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/CMakeFiles/package_source.dir
 C:/Users/ruben/Desktop/cplus prosjekt/tdt4102prosjekt/build/CMakeFiles/edit_cache.dir
