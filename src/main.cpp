@@ -2,12 +2,25 @@
 #include "raylib.h"
 
 int main() {
-    InitWindow(1200, 800, "Car");
+    InitWindow(1600, 1000, "Car");
     SetTargetFPS(60);
 
-    Car car({600.0f, 400.0f}, 0.0f);
+    std::vector<Rectangle> walls = {
+    {30, 50, 20, 900},
+    {650, 50, 20, 900},
+    {30, 30, 640, 20},
+    {30, 950, 640, 20},
+
+    {340,50,20,500},
+    {190,150,20,500},
+    {490,150,20,500},
+    {190,650,320,20},
+    };
+
+    Car car({600.0f, 400.0f}, -90.0f);
 
     while (!WindowShouldClose()) {
+
         float dt = GetFrameTime();
 
         float throttle = 0.0f;
@@ -27,15 +40,18 @@ int main() {
         }
 
         car.setInputs(throttle, steering);
-        car.update(dt);
+        car.update(dt, walls);
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        DrawRectangleLines(100, 100, 1000, 600, BLACK);
-        car.draw();
+        DrawRectangle(50, 50, 600, 900, DARKGRAY);   // rett strekning
 
-        DrawText("Arrow keys to drive", 20, 20, 20, DARKGRAY);
+        for (const Rectangle& wall : walls) {
+            DrawRectangleRec(wall, RED);
+        }
+
+        car.draw();
 
         EndDrawing();
     }
