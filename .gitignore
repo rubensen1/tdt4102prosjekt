@@ -41,5 +41,5 @@
 *.dwo
 
 #ninjating
-*.ninja_logs
+*.ninja_log
 *.ninja_deps
