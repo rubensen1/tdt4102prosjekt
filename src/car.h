@@ -8,7 +8,7 @@ public:
     Car(Vector2 startPosition, float startHeadingDegrees);
 
     void update(float dt, const std::vector<Rectangle>& walls);
-    void draw() const;
+    void draw(const std::vector<Rectangle>& walls) const;
 
     void setInputs(float throttleAmount, float steeringAmount);
     // void reset(Vector2 startPosition, float startHeadingDegrees);
@@ -40,6 +40,7 @@ private:
     std::vector<float> sensorDistances;
     float sensorMaxDistance;
     int sensorAmount;
+    void drawSensor(float angleOffsetDegrees,const std::vector<Rectangle>& walls,float maxDistance,Color color) const;
 
     Vector2 getForwardVector() const;
     Vector2 getRightVector() const;

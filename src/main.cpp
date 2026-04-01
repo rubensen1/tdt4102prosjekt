@@ -52,7 +52,7 @@ int main() {
             DrawRectangleRec(wall, RED);
         }
 
-        car.draw();
+        car.draw(walls);
 
         EndDrawing();
     }
