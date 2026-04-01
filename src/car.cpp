@@ -182,7 +182,7 @@ void Car::draw(const std::vector<Rectangle>& walls) const {
 
     // tegne sensorene
     for (int i = 0; i<sensorAmount; i++) {
-        drawSensor(sensorDegreeValues[i], walls, 500.0f, BLUE);
+        drawSensor(i, sensorDegreeValues[i], walls, 500.0f, BLUE);
     };
 
     // For å tegne hitboxen
@@ -345,8 +345,8 @@ float Car::castRayToWalls(float angleOffsetDegrees,
     return closestDistance;
 }
 
-void Car::drawSensor(float angleOffsetDegrees,const std::vector<Rectangle>& walls,float maxDistance, Color color) const {
-    float distance = castRayToWalls(angleOffsetDegrees, walls, maxDistance);
+void Car::drawSensor(int sensorNr, float angleOffsetDegrees,const std::vector<Rectangle>& walls,float maxDistance, Color color) const {
+    float distance = sensorDistances[sensorNr];
     Vector2 direction = angleToDirection(headingDegrees + angleOffsetDegrees);
 
     Vector2 endPoint = {
@@ -356,4 +356,8 @@ void Car::drawSensor(float angleOffsetDegrees,const std::vector<Rectangle>& wall
 
     DrawLineEx(position, endPoint, 2.0f, color);
     DrawCircleV(endPoint, 3.0f, color);
+}
+
+const std::vector<float>& Car::getSensorDistances() const {
+    return sensorDistances;
 }

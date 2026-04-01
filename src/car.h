@@ -18,8 +18,8 @@ public:
     float getHeadingDegrees() const;
     float getDriftOffsetDegrees() const;
     bool getIsDead() const;
-    float castRayToWalls(float angleOffsetDegrees, const std::vector<Rectangle>& walls, float maxDistance) const;
-
+    const std::vector<float>& getSensorDistances() const;
+    
 private:
     Vector2 position;
     Vector2 velocity;
@@ -28,19 +28,20 @@ private:
     float throttleInput;
     float steeringInput;
     bool isDead;
-
+    
     float width;
     float height;
     float engineForce;
     float turnRate;
     float lateralGrip;
     float drag;
-
+    
     std::vector<float> sensorDegreeValues;
     std::vector<float> sensorDistances;
     float sensorMaxDistance;
     int sensorAmount;
-    void drawSensor(float angleOffsetDegrees,const std::vector<Rectangle>& walls,float maxDistance,Color color) const;
+    void drawSensor(int sensorNr, float angleOffsetDegrees,const std::vector<Rectangle>& walls,float maxDistance,Color color) const;
+    float castRayToWalls(float angleOffsetDegrees, const std::vector<Rectangle>& walls, float maxDistance) const;
 
     Vector2 getForwardVector() const;
     Vector2 getRightVector() const;
