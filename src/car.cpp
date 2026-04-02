@@ -71,20 +71,22 @@ Car::Car(Vector2 startPosition, float startHeadingDegrees)
     isDead(false),
     width(40.0f),
     height(20.0f),
-    engineForce(450.0f),
+    engineForce(400.0f),
     turnRate(150.0f),
     lateralGrip(3.0f),
     drag(0.80f),
     sensorDegreeValues{
         -90.0f, -45.0f, -20.0f, -8.0f, 0.0f, 8.0f, 20.0f, 45.0f, 90.0f
     },
-    sensorMaxDistance(300.0f),
+    sensorMaxDistance(500.0f),
     sensorAmount(sensorDegreeValues.size()),
-    sensorDistances(sensorAmount, 0.0f)
+    sensorDistances(sensorAmount, 0.0f),
+    fitness(0.0f),
+    currentCheckpointIndex(0)
     
     {}
 
-void Car::update(float dt, const std::vector<Rectangle>& walls) {
+void Car::update(float dt, const std::vector<Rectangle>& walls, const std::vector<Rectangle>& checkpoints) {
     if (isDead) {
         return;
     }
@@ -136,12 +138,17 @@ void Car::update(float dt, const std::vector<Rectangle>& walls) {
     // }
 
     for (int i = 0; i<sensorAmount; i++) {
-        sensorDistances[i] = castRayToWalls(sensorDegreeValues[i], walls, 500.0f);
+        sensorDistances[i] = castRayToWalls(sensorDegreeValues[i], walls, sensorMaxDistance);
     };
     // std::cout << sensorDistances[8]<<std::endl; 90 grader til høyre
-
-    // fjerne
-
+    
+    if (CheckCollisionPointRec(position, checkpoints[currentCheckpointIndex])) {
+        currentCheckpointIndex++;
+        fitness += 100.0f;
+    }
+    
+    std::cout << position.y<<std::endl;
+    std::cout << currentCheckpointIndex<<std::endl;
 }
 
 void Car::draw(const std::vector<Rectangle>& walls) const {

@@ -7,7 +7,7 @@ class Car {
 public:
     Car(Vector2 startPosition, float startHeadingDegrees);
 
-    void update(float dt, const std::vector<Rectangle>& walls);
+    void update(float dt, const std::vector<Rectangle>& walls, const std::vector<Rectangle>& checkpoints);
     void draw(const std::vector<Rectangle>& walls) const;
 
     void setInputs(float throttleAmount, float steeringAmount);
@@ -35,6 +35,8 @@ private:
     float turnRate;
     float lateralGrip;
     float drag;
+    float fitness;
+    int currentCheckpointIndex;
     
     std::vector<float> sensorDegreeValues;
     std::vector<float> sensorDistances;
