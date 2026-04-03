@@ -17,7 +17,11 @@ FetchContent_MakeAvailable(raylib)
 
 add_executable(yuh
     src/main.cpp
-    src/Car.cpp
+    src/car.cpp
+    src/neural.cpp
 )
 
 target_link_libraries(yuh PRIVATE raylib)
+
+target_compile_options(yuh PRIVATE -g -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC)
+# target_link_options(yuh PRIVATE -fsanitize=address)

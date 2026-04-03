@@ -1,6 +1,7 @@
 #pragma once
 
 #include "raylib.h"
+#include "neural.h"
 #include <vector>
 
 class Car {
@@ -10,7 +11,8 @@ public:
     void update(float dt, const std::vector<Rectangle>& walls, const std::vector<Rectangle>& checkpoints);
     void draw(const std::vector<Rectangle>& walls) const;
 
-    void setInputs(float throttleAmount, float steeringAmount);
+    void updateAI();
+    void setOutputs(float throttleAmount, float steeringAmount);
     // void reset(Vector2 startPosition, float startHeadingDegrees);
 
     Vector2 getPosition() const;
@@ -19,6 +21,7 @@ public:
     float getDriftOffsetDegrees() const;
     bool getIsDead() const;
     const std::vector<float>& getSensorDistances() const;
+    NeuralNetwork bren;
     
 private:
     Vector2 position;
@@ -28,6 +31,8 @@ private:
     float throttleInput;
     float steeringInput;
     bool isDead;
+
+    std::vector<float> getInputs();
     
     float width;
     float height;
@@ -39,9 +44,9 @@ private:
     int currentCheckpointIndex;
     
     std::vector<float> sensorDegreeValues;
-    std::vector<float> sensorDistances;
     float sensorMaxDistance;
     int sensorAmount;
+    std::vector<float> sensorDistances;
     void drawSensor(int sensorNr, float angleOffsetDegrees,const std::vector<Rectangle>& walls,float maxDistance,Color color) const;
     float castRayToWalls(float angleOffsetDegrees, const std::vector<Rectangle>& walls, float maxDistance) const;
 

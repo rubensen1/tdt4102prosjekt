@@ -11,6 +11,8 @@ public:
 
     std::vector<float> getOutput(const std::vector<float>& inputs) const;
 
+    void fillRandomly();
+
     void mutate(float mutationRate, float mutationStrength);
 
 private:
@@ -18,10 +20,8 @@ private:
     int hiddenSize;
     int outputSize;
 
-    std::vector<std::vector<float>> weightsInputHidden;
-    std::vector<std::vector<float>> weightsHiddenOutput;
+    std::vector<std::vector<float>> weightsInput;
+    std::vector<std::vector<float>> weightsHidden;
     std::vector<float> biasHidden;
     std::vector<float> biasOutput;
-
-    static float activation(float x);
 };

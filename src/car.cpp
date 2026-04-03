@@ -1,4 +1,5 @@
-#include "Car.h"
+#include "car.h"
+#include "neural.h"
 
 #include <cmath>
 #include <iostream>
@@ -82,7 +83,9 @@ Car::Car(Vector2 startPosition, float startHeadingDegrees)
     sensorAmount(sensorDegreeValues.size()),
     sensorDistances(sensorAmount, 0.0f),
     fitness(0.0f),
-    currentCheckpointIndex(0)
+    currentCheckpointIndex(0),
+
+    bren(11,8,2)
     
     {}
 
@@ -147,8 +150,9 @@ void Car::update(float dt, const std::vector<Rectangle>& walls, const std::vecto
         fitness += 100.0f;
     }
     
-    std::cout << position.y<<std::endl;
-    std::cout << currentCheckpointIndex<<std::endl;
+    // std::cout << position.y<<std::endl;
+    std::cout << newSpeed<<std::endl;
+    // std::cout << currentCheckpointIndex<<std::endl;
 }
 
 void Car::draw(const std::vector<Rectangle>& walls) const {
@@ -207,10 +211,10 @@ void Car::draw(const std::vector<Rectangle>& walls) const {
     // }
 }
 
-void Car::setInputs(float throttleAmount, float steeringAmount) {
-    if (isDead) {
-        return;
-    }
+void Car::setOutputs(float throttleAmount, float steeringAmount) {
+    // if (isDead) {
+    //     return;
+    // }
 
     throttleInput = throttleAmount;
     steeringInput = steeringAmount;
@@ -355,16 +359,32 @@ float Car::castRayToWalls(float angleOffsetDegrees,
 void Car::drawSensor(int sensorNr, float angleOffsetDegrees,const std::vector<Rectangle>& walls,float maxDistance, Color color) const {
     float distance = sensorDistances[sensorNr];
     Vector2 direction = angleToDirection(headingDegrees + angleOffsetDegrees);
-
+    
     Vector2 endPoint = {
         position.x + direction.x * distance,
         position.y + direction.y * distance,
     };
-
+    
     DrawLineEx(position, endPoint, 2.0f, color);
     DrawCircleV(endPoint, 3.0f, color);
 }
 
 const std::vector<float>& Car::getSensorDistances() const {
     return sensorDistances;
+}
+
+void Car::updateAI() {
+    std::vector<float> inputs = getInputs();
+    std::vector<float> outputs = bren.getOutput(inputs);
+    setOutputs(outputs[0], outputs[1]);
+}
+
+std::vector<float> Car::getInputs() {               //legger alle inputs etter hverandre
+    std::vector<float> inputs;
+    for (float& value : sensorDistances) {
+        inputs.push_back(value/500);
+    }
+    inputs.push_back(length(velocity)/500);             //burde finne theoretical maks velocity for å normalisere den til -1,1
+    inputs.push_back(driftOffsetDegrees/180);           //normalisert??
+    return inputs;
 }

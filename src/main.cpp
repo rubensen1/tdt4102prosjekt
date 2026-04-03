@@ -1,8 +1,11 @@
-#include "Car.h"
+#include "car.h"
 #include "raylib.h"
+
+// #include <signal.h>
 #include <iostream>
 
 int main() {
+    // signal(SIGABRT, [](int){ __builtin_trap(); });
     InitWindow(1600, 1000, "Car");
     SetTargetFPS(60);
 
@@ -39,7 +42,17 @@ int main() {
         {347,550,6,100},
     };
 
-    Car car({600.0f, 500.0f}, -90.0f);
+    std::vector<Car> carList;
+
+    for (int i = 0; i<100;i++) {
+        carList.push_back(Car({580.0f, 550.0f}, -90.0f));
+    }
+
+    // Car({600.0f, 500.0f}, -90.0f),
+    // Car({560.0f, 500.0f}, -90.0f),
+    // Car({520.0f, 500.0f}, -90.0f),
+    // Car({600.0f, 550.0f}, -90.0f),
+    // Car({560.0f, 550.0f}, -90.0f),
 
     while (!WindowShouldClose()) {
 
@@ -61,13 +74,25 @@ int main() {
             steering += 1.0f;
         }
 
-        car.setInputs(throttle, steering);
-        car.update(dt, walls, checkpoints);
+        for (Car& car : carList) {
+            if (!car.getIsDead()) {
+                car.updateAI();
+                car.update(dt, walls, checkpoints);
+            }
+        }
+
+        // manuell mode:
+        // for (Car& car : carList) {               
+        //     if (!car.getIsDead()) {
+        //         car.setOutputs(throttle, steering);
+        //         car.update(dt, walls, checkpoints);
+        //     }
+        // }
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        DrawRectangle(50, 50, 600, 900, DARKGRAY);   // rett strekning
+        DrawRectangle(50, 50, 600, 900, DARKGRAY);   // asfaltblokk yuh
 
         for (const Rectangle& wall : walls) {
             DrawRectangleRec(wall, RED);
@@ -76,7 +101,11 @@ int main() {
             DrawRectangleRec(checkpoint, GREEN);
         }
 
-        car.draw(walls);
+        for (Car& car : carList) {
+            if (!car.getIsDead()) {
+                car.draw(walls);
+            }
+        }
         
         EndDrawing();
     }
