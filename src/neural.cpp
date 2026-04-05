@@ -23,8 +23,39 @@ NeuralNetwork::NeuralNetwork(int inputSize, int hiddenSize, int outputSize)
         fillRandomly();
     }
 
-void mutate(float mutationRate, float mutationStrength) {
-    
+void NeuralNetwork::mutate(float mutationRate, float mutationStrength) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<float> chanceDist(0.0f, 1.0f);
+    std::uniform_real_distribution<float> deltaDist(-mutationStrength, mutationStrength);
+
+    for (int i = 0; i < inputSize; i++) {
+        for (int j = 0; j < hiddenSize; j++) {
+            if (chanceDist(gen) < mutationRate) {
+                weightsInput[i][j] += deltaDist(gen);
+            }
+        }
+    }
+
+    for (int i = 0; i < hiddenSize; i++) {
+        for (int j = 0; j < outputSize; j++) {
+            if (chanceDist(gen) < mutationRate) {
+                weightsHidden[i][j] += deltaDist(gen);
+            }
+        }
+    }
+
+    for (int i = 0; i < hiddenSize; i++) {
+        if (chanceDist(gen) < mutationRate) {
+            biasHidden[i] += deltaDist(gen);
+        }
+    }
+
+    for (int i = 0; i < outputSize; i++) {
+        if (chanceDist(gen) < mutationRate) {
+            biasOutput[i] += deltaDist(gen);
+        }
+    }
 }
 
 std::vector<float> NeuralNetwork::getOutput(const std::vector<float>& inputs) const {
