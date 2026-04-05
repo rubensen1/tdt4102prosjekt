@@ -2,8 +2,10 @@
 
 #include "raylib.h"
 #include <vector>
+#include <random>
 
 class NeuralNetwork {
+    static std::mt19937 gen;
 public:
     NeuralNetwork(int inputSize, int hiddenSize, int outputSize);
 
@@ -15,6 +17,8 @@ public:
 
     void mutate(float mutationRate, float mutationStrength);
 
+    void draw();
+
 private:
     int inputSize;
     int hiddenSize;
@@ -24,4 +28,7 @@ private:
     std::vector<std::vector<float>> weightsHidden;
     std::vector<float> biasHidden;
     std::vector<float> biasOutput;
+
+    // Color WeightToColorRB const;
+    // 
 };

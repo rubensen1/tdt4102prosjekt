@@ -7,13 +7,14 @@
 class Car {
 public:
     Car(Vector2 startPosition, float startHeadingDegrees);
+    Car(Vector2 startPosition, float startHeadingDegrees, const NeuralNetwork& brain);
 
     void update(float dt, const std::vector<Rectangle>& walls, const std::vector<Rectangle>& checkpoints);
     void draw(const std::vector<Rectangle>& walls) const;
 
     void updateAI();
     void setOutputs(float throttleAmount, float steeringAmount);
-    // void reset(Vector2 startPosition, float startHeadingDegrees);
+    void reset(Vector2 startPosition, float startHeadingDegrees);
 
     Vector2 getPosition() const;
     Vector2 getVelocity() const;
@@ -23,6 +24,8 @@ public:
     const std::vector<float>& getSensorDistances() const;
     NeuralNetwork bren;
     
+    float fitness;
+    int leader;
 private:
     Vector2 position;
     Vector2 velocity;
@@ -40,7 +43,6 @@ private:
     float turnRate;
     float lateralGrip;
     float drag;
-    float fitness;
     int currentCheckpointIndex;
     
     std::vector<float> sensorDegreeValues;

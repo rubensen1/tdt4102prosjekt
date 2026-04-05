@@ -77,15 +77,44 @@ Car::Car(Vector2 startPosition, float startHeadingDegrees)
     lateralGrip(3.0f),
     drag(0.80f),
     sensorDegreeValues{
-        -90.0f, -45.0f, -20.0f, -8.0f, 0.0f, 8.0f, 20.0f, 45.0f, 90.0f
+        -75.0f, -40.0f, -15.0f, 0.0f, 15.0f, 40.0f, 75.0f
     },
     sensorMaxDistance(500.0f),
     sensorAmount(sensorDegreeValues.size()),
     sensorDistances(sensorAmount, 0.0f),
     fitness(0.0f),
     currentCheckpointIndex(0),
+    leader(0),
 
-    bren(11,8,2)
+    bren(9,8,2)
+    
+    {}
+
+Car::Car(Vector2 startPosition, float startHeadingDegrees, const NeuralNetwork& brain)
+  : position(startPosition),
+    velocity{0.0f, 0.0f},
+    headingDegrees(startHeadingDegrees),
+    driftOffsetDegrees(0.0f),
+    throttleInput(0.0f),
+    steeringInput(0.0f),
+    isDead(false),
+    width(40.0f),
+    height(20.0f),
+    engineForce(400.0f),
+    turnRate(150.0f),
+    lateralGrip(3.0f),
+    drag(0.80f),
+    sensorDegreeValues{
+        -75.0f, -40.0f, -15.0f, 0.0f, 15.0f, 40.0f, 75.0f
+    },
+    sensorMaxDistance(500.0f),
+    sensorAmount(sensorDegreeValues.size()),
+    sensorDistances(sensorAmount, 0.0f),
+    fitness(0.0f),
+    currentCheckpointIndex(0),
+    leader(0),
+
+    bren(brain)
     
     {}
 
@@ -151,7 +180,7 @@ void Car::update(float dt, const std::vector<Rectangle>& walls, const std::vecto
     }
     
     // std::cout << position.y<<std::endl;
-    std::cout << newSpeed<<std::endl;
+    // std::cout << newSpeed<<std::endl;
     // std::cout << currentCheckpointIndex<<std::endl;
 }
 
@@ -168,7 +197,15 @@ void Car::draw(const std::vector<Rectangle>& walls) const {
         height / 2.0f,
     };
 
-    DrawRectanglePro(body, origin, headingDegrees, ORANGE);
+    if (!leader) {
+        DrawRectanglePro(body, origin, headingDegrees, ORANGE);
+    // } else if (leader == 3){
+    //     DrawRectanglePro(body, origin, headingDegrees, PINK);
+    } else if (leader == 2){
+        DrawRectanglePro(body, origin, headingDegrees, PINK);
+    } else {
+        DrawRectanglePro(body, origin, headingDegrees, VIOLET);
+    }
 
     Vector2 forward = getForwardVector();
     Vector2 nose = {
@@ -220,15 +257,18 @@ void Car::setOutputs(float throttleAmount, float steeringAmount) {
     steeringInput = steeringAmount;
 }
 
-// void Car::reset(Vector2 startPosition, float startHeadingDegrees) {
-//     position = startPosition;
-//     velocity = {0.0f, 0.0f};
-//     headingDegrees = startHeadingDegrees;
-//     driftOffsetDegrees = 0.0f;
-//     throttleInput = 0.0f;
-//     steeringInput = 0.0f;
-//     isDead = false;
-// }
+void Car::reset(Vector2 startPosition, float startHeadingDegrees) {
+    position = startPosition;
+    velocity = {0.0f, 0.0f};
+    headingDegrees = startHeadingDegrees;
+    driftOffsetDegrees = 0.0f;
+    throttleInput = 0.0f;
+    steeringInput = 0.0f;
+    isDead = false;
+    sensorDistances.assign(sensorAmount, 0.0f);
+    fitness = 0.0f;
+    currentCheckpointIndex = 0;
+}
 
 Vector2 Car::getPosition() const {
     return position;
