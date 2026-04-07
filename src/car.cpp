@@ -177,6 +177,9 @@ void Car::update(float dt, const std::vector<Rectangle>& walls, const std::vecto
     if (CheckCollisionPointRec(position, checkpoints[currentCheckpointIndex])) {
         currentCheckpointIndex++;
         fitness += 100.0f;
+        if (currentCheckpointIndex==35) {
+            currentCheckpointIndex = 0;
+        }
     }
     
     // std::cout << position.y<<std::endl;

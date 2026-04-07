@@ -26,6 +26,7 @@ public:
     
     float fitness;
     int leader;
+    std::vector<float> getInputs();
 private:
     Vector2 position;
     Vector2 velocity;
@@ -35,7 +36,6 @@ private:
     float steeringInput;
     bool isDead;
 
-    std::vector<float> getInputs();
     
     float width;
     float height;

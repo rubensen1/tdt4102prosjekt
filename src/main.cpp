@@ -28,41 +28,52 @@ int main() {
     };
 
     std::vector<Rectangle> checkpoints = {
-        {510,450,140,7},
-        {510,390,140,7},
-        {510,330,140,7},
-        {510,270,140,7},
-        {510,210,140,7},
-        {510,150,140,7},
+        {510,450,140,8},
+        {510,390,140,8},
+        {510,330,140,8},
+        {510,270,140,8},
+        {510,210,140,8},
+        {510,150,140,8},
         
-        {497,50,6,100},
+        {496,50,8,100},
         
-        {360,150,130,7},
-        {360,210,130,7},
-        {360,270,130,7},
-        {360,330,130,7},
-        {360,390,130,7},
-        {360,450,130,7},
-        {360,510,130,7},
+        {360,150,130,8},
+        {360,210,130,8},
+        {360,270,130,8},
+        {360,330,130,8},
+        {360,390,130,8},
+        {360,450,130,8},
+        {360,510,130,8},
         
-        {347,550,6,100},
+        {346,550,8,100},
         
-        {210,510,130,7},
-        {210,450,130,7},
-        {210,390,130,7},
-        {210,330,130,7},
-        {210,270,130,7},
-        {210,210,130,7},
-        {210,150,130,7},
+        {210,510,130,8},
+        {210,450,130,8},
+        {210,390,130,8},
+        {210,330,130,8},
+        {210,270,130,8},
+        {210,210,130,8},
+        {210,150,130,8},
         
-        {197,50,6,100},
+        {196,50,8,100},
+        
+        {50,150,140,8},
+        {50,210,140,8},
+        {50,270,140,8},
+        {50,330,140,8},
+        {50,390,140,8},
+        {50,450,140,8},
+        {50,510,140,8},
+        {50,570,140,8},
+        {50,630,140,8},
 
-        {50,150,140,7},
-        {50,210,140,7},
-        {50,270,140,7},
-        {50,330,140,7},
-        {50,390,140,7},
-        {50,450,140,7},
+        {196,670,8,280},
+        {246,670,8,280},
+        {296,670,8,280},
+        {346,670,8,280},
+        {396,670,8,280},
+        {446,670,8,280},
+        {496,670,8,280},
     };
     
     std::vector<Car> carList;
@@ -72,20 +83,23 @@ int main() {
     }
 
     int generation = 1;
+    float lastBestFitness = 0;
 
     while (!WindowShouldClose()) {
 
         auto startTime = std::chrono::steady_clock::now();
 
+        
         while (true) {
-
+            
             if (WindowShouldClose()) {
                 break;
             }
             auto now = std::chrono::steady_clock::now();
             float elapsed = std::chrono::duration<float>(now - startTime).count();
-
+            
             float dt = GetFrameTime();
+            int carsAlive = 0;
     
             // float throttle = 0.0f;
             // float steering = 0.0f;
@@ -107,6 +121,7 @@ int main() {
                 if (!car.getIsDead()) {
                     car.updateAI();
                     car.update(dt, walls, checkpoints);
+                    carsAlive += 1;
                 }
             }
     
@@ -119,7 +134,7 @@ int main() {
             // }
     
             BeginDrawing();
-            ClearBackground(RAYWHITE);
+            ClearBackground(GRAY);
     
             DrawRectangle(50, 50, 600, 900, DARKGRAY);   // asfaltblokk yuh
     
@@ -136,13 +151,27 @@ int main() {
                 }
             }
 
-            DrawText(TextFormat("Cars: %d", cars) , 700, 20, 15, RED);
-            DrawText(TextFormat("Mutationrate: %.1f", mutationRate) , 700, 40, 15, RED);
-            DrawText(TextFormat("Mutationstrength: %.1f", mutationStrength) , 700, 60, 15, RED);
-            DrawText(TextFormat("Generation: %d", generation) , 700, 80, 15, RED);
-            DrawText(TextFormat("fps: %.2f", 1/dt) , 700, 100, 10, RED);
+            for (Car& car : carList) {
+                if (car.leader) {
+                    if (car.leader ==1){
+                        car.bren.draw(car.getInputs());
+                    }
+                    car.draw(walls);
+                }
+            }
+            
+            DrawText(TextFormat("Cars alive: %d/%d",carsAlive ,cars) , 700, 20, 17, BLACK);
+            DrawText(TextFormat("MutationRate: %.2f * e^(-%d/70) = %.3f", mutationRate, generation, mutationRate*std::exp(-generation/70.0f)) , 700, 40, 17, BLACK);
+            DrawText(TextFormat("MutationStrength: %.2f * e^(-%d/70) = %.3f", mutationStrength, generation, mutationStrength*std::exp(-generation/70.0f)) , 700, 60, 17, BLACK);
+            DrawText(TextFormat("Generation: %d", generation) , 700, 80, 17, BLACK);
+            DrawText(TextFormat("fps: %.2f", 1/dt) , 700, 100, 15, BLACK);
 
-            carList[0].bren.draw();
+            DrawText(TextFormat("Last gen best fitness: %.2f",lastBestFitness) , 1050, 20, 17, BLACK);
+            DrawText(TextFormat("Last gen 1st fitness: %.2f",carList[0].fitness) , 1050, 40, 17, BLACK);
+            DrawText(TextFormat("Last gen 2nd fitness: %.2f",carList[1].fitness) , 1050, 60, 17, BLACK);
+            DrawText(TextFormat("Last gen 3rd fitness: %.2f",carList[2].fitness) , 1050, 80, 17, BLACK);
+
+
 
             EndDrawing();
 
@@ -161,24 +190,35 @@ int main() {
 
         std::ranges::sort(carList, std::ranges::greater{}, &Car::fitness);
 
-        std::cout<<carList[0].fitness<<std::endl;
-        std::cout<<carList[1].fitness<<std::endl;
-        std::cout<<carList[2].fitness<<std::endl;
-        std::cout<<carList[3].fitness<<std::endl;
+        // std::cout<<carList[0].fitness<<std::endl;
+        // std::cout<<carList[1].fitness<<std::endl;
+        // std::cout<<carList[2].fitness<<std::endl;
+        // std::cout<<carList[3].fitness<<std::endl;
 
         std::vector<Car> nyCarList;
 
         nyCarList.push_back(carList[0]);
         nyCarList.push_back(carList[1]);
         nyCarList.push_back(carList[2]);
+
         nyCarList[0].leader = 1;
         nyCarList[1].leader = 2;
         nyCarList[2].leader = 2;
 
+        if (lastBestFitness>=carList[0].fitness){
+            mutationRate+=0.02;
+            mutationStrength+=0.04;
+        } else {
+            mutationRate-=0.02;
+            mutationStrength-=0.04;
+        }
+
+        lastBestFitness = carList[0].fitness;
+
         for (int i = 0; i < 10; i++) {
             for (int y = 0; y <20;y++) {
                 NeuralNetwork goodBrain = carList[i].bren;
-                goodBrain.mutate(0.8f,0.4f);
+                goodBrain.mutate(mutationRate,mutationStrength,generation);
 
                 Car goodChild({580.0f, 550.0f}, -90.0f, goodBrain);
                 // goodChild.bren = goodBrain;

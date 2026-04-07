@@ -15,9 +15,9 @@ public:
 
     void fillRandomly();
 
-    void mutate(float mutationRate, float mutationStrength);
+    void mutate(float mutationRate, float mutationStrength, int generation);
 
-    void draw();
+    void draw(const std::vector<float>& inputs);
 
 private:
     int inputSize;
