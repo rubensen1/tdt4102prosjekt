@@ -12,11 +12,18 @@ can very easily be modified to use deep learning, NEAT, or other learning algori
 
 Activation method used is the tanh formula
 
+## Requirements
+- Windows
+- Meson
+- Ninja
+- C++ compiler
+
+## Run without building
+Download the repository and run:
+
+./build/program.exe
 
 ## Installation
-
-A compiled version is in ./build/program.exe
-
 In order:
 
 To build:
@@ -32,14 +39,14 @@ meson compile -Cbuild
 
 To run:
 ```bash
-./build/yuh
+./build/program.exe
 ```
 
 ## Usage
 
-Launch the program, sit back, check in once in a while to see how your babies are doing.
+Launch the program, sit back, check in once in a while to see how "evolution" is doing.
 
-Sometimes (rarely) they will evolve doing cool tricks, as that was how your "learning-run" evolved by random chance.
+Sometimes (rarely) they will evolve doing cool tricks, as that was how your "run" evolved by random chance.
 
 The learning follows a curve given by (0.5+0.03*gen)*e^(-gen/60), that has showed potential in testing
 
@@ -49,6 +56,8 @@ The project is no more maintained or worked on at all.
 Early raylib version can be cloned at https://github.com/rubensen1/tdt4102prosjekt.git
 
 Might make another git for the project after the great animationwindow transfer of '26
+
+ - Updated to animationwindow 22/06/2026
 
 ## License
 
