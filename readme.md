@@ -2,6 +2,8 @@
 
 Car is an easy neural network that drives a car around a lap.
 
+![Demo](demo.gif)
+
 ## How it works
 Every car is controlled by a neural network, that receives sensor-data and outputs throttle and turn, it learns by evolution. By default this is not deep learning because there is only one hidden layer. And it is not NEAT algorithm, since it lacks crossover, it is not really to be called reinforcement learning either.
 
