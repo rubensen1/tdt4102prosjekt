@@ -48,7 +48,11 @@ Launch the program, sit back, check in once in a while to see how "evolution" is
 
 Sometimes (rarely) they will evolve doing cool tricks, as that was how your "run" evolved by random chance.
 
-The learning follows a curve given by (0.5+0.03*gen)*e^(-gen/60), that has showed potential in testing
+Included in root are 3 .txt files that can be loaded onto a live run, rename the file you are testing to "car.txt" and click "Load File".
+
+ - Note that "Save File" overwrites "car.txt" with the current best neural network.
+
+The learning follows a curve given by (0.5+0.03*gen)*e^(-gen/60), that has showed potential in testing.
 
 ## Contributing
 
