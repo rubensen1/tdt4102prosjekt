@@ -57,7 +57,7 @@ Early raylib version can be cloned at https://github.com/rubensen1/tdt4102prosje
 
 Might make another git for the project after the great animationwindow transfer of '26
 
- - Updated to animationwindow 22/06/2026
+ - Updated git to use finished animationwindow version 22/06/2026
 
 ## License
 
