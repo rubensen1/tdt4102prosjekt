@@ -1,9 +1,0 @@
-fra hvor som helst:
-
-C:\TDT4102-mingw64\bin\gdb.exe "C:\Users\ruben\Desktop\cplus prosjekt\tdt4102prosjekt\build\yuh.exe"
-run
-bt
-
-fra root til prosjektet:
-
-cmake --build build 
