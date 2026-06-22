@@ -1,24 +1,18 @@
-# VS Code
+
 .vscode/
 
-# Build output
-build/
 dist/
 out/
 
-# Meson
 .mesonpy*
 meson-logs/
 meson-private/
 
-# Windows junk
+
 Thumbs.db
 Desktop.ini
-
-# Mac junk
 .DS_Store
 
-# Compiled libraries
 *.dll
 *.a
 *.la
@@ -26,10 +20,6 @@ Desktop.ini
 *.so
 *.dylib
 
-# Executables
-*.exe
-
-# SDL binary packages
 subprojects/sdl2_windows/
 subprojects/sdl2_image_windows/
 subprojects/sdl2_mixer_windows/
